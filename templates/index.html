@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="p-3 d-flex justify-content-center">
+        <div class="d-flex flex-column p-3 bg-dark text-white bd-highlight justify-content-center align-items-center gap-2">
+            <h1 class="jumbotron-heading text-danger">Dojo Survey</h1>
+            <form class="d-flex flex-column" action="/submit" method="post">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Name</span>
+                    <input type="text" class="form-control" placeholder="name" aria-label="Username"
+                        aria-describedby="basic-addon1" name="name">
+                </div>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Favorite Language: </label>
+                    <select class="form-select" id="inputGroupSelect01" name="language">
+                        <option selected>Choose...</option>
+                        <option>Python</option>
+                        <option>JavaScript</option>
+                        <option>Racket</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Dojo Location: </label>
+                    <select class="form-select" id="inputGroupSelect01" name="location">
+                        <option selected>Choose...</option>
+                        <option >San Jose</option>
+                        <option >Chicago</option>
+                        <option >Boston</option>
+                    </select>
+                </div>
+                <label for="exampleFormControlTextarea1" class="form-label">Comments</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text"></textarea>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
