@@ -14,13 +14,20 @@
     <main class="p-3 d-flex justify-content-center">
         <div class="d-flex flex-column p-3 bg-dark text-white bd-highlight justify-content-center align-items-center gap-2">
             <h1 class="jumbotron-heading text-danger">Dojo Survey</h1>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages%}
+                        <p class="text-warning"> {{ message }} </p>
+                    {% endfor %}
+                {% endif %} 
+            {% endwith %}
             <form class="d-flex flex-column" action="/submit" method="post">
-                <div class="input-group mb-3">
+                <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Name</span>
                     <input type="text" class="form-control" placeholder="name" aria-label="Username"
                         aria-describedby="basic-addon1" name="name">
                 </div>
-                <div class="input-group mb-3">
+                <div class="input-group">
                     <label class="input-group-text" for="inputGroupSelect01">Favorite Language: </label>
                     <select class="form-select" id="inputGroupSelect01" name="language">
                         <option selected>Choose...</option>
@@ -29,7 +36,7 @@
                         <option>Racket</option>
                     </select>
                 </div>
-                <div class="input-group mb-3">
+                <div class="input-group">
                     <label class="input-group-text" for="inputGroupSelect01">Dojo Location: </label>
                     <select class="form-select" id="inputGroupSelect01" name="location">
                         <option selected>Choose...</option>
@@ -39,7 +46,7 @@
                     </select>
                 </div>
                 <label for="exampleFormControlTextarea1" class="form-label">Comments</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comment"></textarea>
                 <button type="submit" class="btn btn-primary">Sign in</button>
             </form>
         </div>
